@@ -5,7 +5,7 @@ var Clause = require('./src/clause');
 
 var concat = require('concat-stream')
   , parse = require('ass-parser')
-  , Restyler = require('ass-restyler')
+  , Styles = require('ass-styles')
   , stringify = require('ass-stringify');
 
 var fs = require('fs');
@@ -21,13 +21,14 @@ var usage = function () {
 
 var main = function () {
   process.stdin.pipe(concat({ encoding: 'string' }, function (sub) {
-    var restyler = Restyler(parse(sub, { comments: true }));
+    var ass = parse(sub, { comments: true });
+    var styles = Styles(ass);
 
     argv.forEach(function (expr) {
-      Clause(expr)(restyler);
+      Clause(expr)(styles);
     });
 
-    console.log(stringify(restyler.value));
+    console.log(stringify(ass));
   }));
 };
 

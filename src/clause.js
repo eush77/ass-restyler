@@ -5,21 +5,21 @@ module.exports = function (expr) {
   var m = expr.match(/^([^.]+)\.([^=]*[^-+=])([-+]?)=(.*)$/);
 
   var style = m[1];
-  var property = m[2];
+  var attribute = m[2];
   var modifier = m[3];
   var value = m[4];
 
   if (!modifier) {
-    return function (restyler) {
-      restyler.set(style, property, value);
+    return function (styles) {
+      styles[style][attribute] = value;
     };
   }
   else {
     value = Number(value);
-    return function (restyler) {
-      var oldValue = +restyler.get(style, property);
+    return function (styles) {
+      var oldValue = +styles[style][attribute];
       var newValue = (modifier == '+') ? oldValue + value : oldValue - value;
-      return restyler.set(style, property, newValue);
+      styles[style][attribute] = newValue;
     };
   }
 };
