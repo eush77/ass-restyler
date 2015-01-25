@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "ass-parser": "^0.1.1",
-    "ass-stringify": "^0.1.0",
+    "ass-stringify": "^0.1.2",
     "ass-styles": "^0.2.0",
     "concat-stream": "^1.4.7"
   },
