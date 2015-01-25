@@ -1,13 +1,13 @@
-[![npm](https://nodei.co/npm/ass-restyler-cli.png)](https://nodei.co/npm/ass-restyler-cli/)
+[![npm](https://nodei.co/npm/ass-restyler.png)](https://nodei.co/npm/ass-restyler/)
 
-# ass-restyler-cli
+# ass-restyler
 
 [![Dependency Status][david-badge]][david]
 
 Change SSA/ASS subtitle styles from the command line.
 
-[david]: https://david-dm.org/eush77/ass-restyler-cli
-[david-badge]: https://david-dm.org/eush77/ass-restyler-cli.png
+[david]: https://david-dm.org/eush77/ass-restyler
+[david-badge]: https://david-dm.org/eush77/ass-restyler.png
 
 ## Example
 
@@ -36,7 +36,7 @@ Clauses:
 ## Install
 
 ```shell
-npm install ass-restyler-cli -g
+npm install ass-restyler -g
 ```
 
 ## License
