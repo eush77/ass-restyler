@@ -23,9 +23,9 @@ ass-restyler --help
 ```
 
 Clauses:
-  - `Style:Property=Value`
-  - `Style:Property+=Value` (if it makes sense for the property)
-  - `Style:Property-=Value` (if it makes sense for the property)
+  - `Style:Attribute=Value`
+  - `Style:Attribute+=Value` (if it makes sense for the attribute)
+  - `Style:Attribute-=Value` (if it makes sense for the attribute)
 
 ## References
 
