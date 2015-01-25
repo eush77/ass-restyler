@@ -21,14 +21,25 @@ var usage = function () {
 
 var main = function () {
   process.stdin.pipe(concat({ encoding: 'string' }, function (sub) {
-    var ass = parse(sub, { comments: true });
-    var styles = Styles(ass);
+    try {
+      var ass = parse(sub, { comments: true });
+      var styles = Styles(ass);
 
-    argv.forEach(function (expr) {
-      Clause(expr)(styles);
-    });
+      argv.forEach(function (expr) {
+        Clause(expr)(styles);
+      });
 
-    console.log(stringify(ass));
+      console.log(stringify(ass));
+    }
+    catch (err) {
+      if (err.message) {
+        console.error(err.message);
+        process.exit(1);
+      }
+      else {
+        throw err;
+      }
+    }
   }));
 };
 
