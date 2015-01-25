@@ -6,6 +6,10 @@ var checkAccess = require('./check-access');
 module.exports = function (expr) {
   var m = expr.match(/^([^:]+):([^=]*[^-+=])([-+]?)=(.*)$/);
 
+  if (!m) {
+    throw Error('Wrong clause format: ' + expr);
+  }
+
   var style = m[1];
   var attribute = m[2];
   var modifier = m[3];

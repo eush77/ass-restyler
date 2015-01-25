@@ -32,13 +32,8 @@ var main = function () {
       console.log(stringify(ass));
     }
     catch (err) {
-      if (err.message) {
-        console.error(err.message);
-        process.exit(1);
-      }
-      else {
-        throw err;
-      }
+      console.error(err.toString());
+      process.exit(1);
     }
   }));
 };
