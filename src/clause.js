@@ -2,7 +2,7 @@
 
 
 module.exports = function (expr) {
-  var m = expr.match(/^([^.]+)\.([^=]*[^-+=])([-+]?)=(.*)$/);
+  var m = expr.match(/^([^:]+):([^=]*[^-+=])([-+]?)=(.*)$/);
 
   var style = m[1];
   var attribute = m[2];
