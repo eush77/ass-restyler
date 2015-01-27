@@ -29,7 +29,7 @@ var main = function () {
         Clause(expr)(styles);
       });
 
-      console.log(stringify(ass));
+      process.stdout.write(stringify(ass));
     }
     catch (err) {
       console.error(err.toString());
