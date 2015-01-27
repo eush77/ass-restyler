@@ -1,0 +1,18 @@
+[Some Stuff]
+Key: Value
+Key: Value
+
+[V4 Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, TertiaryColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, AlphaLevel, Encoding
+Style: DefaultVCD,Comic Sans,28,11861244,11861244,11861244,-2147483640,2,0,1,1,2,2,30,30,30,0,0
+
+[More Stuff]
+
+
+[V4+ Styles]
+;; IDK if this is possible though.
+;; I mean more than one styles section.
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Comic Sans,50,&H00F1F1F9,&H00FF00FF,&H006A0037,&H00000000,-1,0,0,0,100,100,0,0,1,1.2,0,2,30,30,335,1
+Style: Overlap,Comic Sans,50,&H00F1F1F9,&H00000000,&H00AB1045,&H00000000,-1,0,0,0,100,100,0,0,1,0.8,2,2,20,20,36,1
+Style: credits,Comic Sans,42,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,2,2,0,2,10,10,10,1
