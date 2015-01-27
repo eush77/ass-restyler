@@ -26,6 +26,7 @@ Clauses:
   - `Style:Attribute=Value`
   - `Style:Attribute+=Value` (if it makes sense for the attribute)
   - `Style:Attribute-=Value` (if it makes sense for the attribute)
+  - `Style:Attribute*=Value` (if it makes sense for the attribute)
 
 ## References
 

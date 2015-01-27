@@ -4,7 +4,7 @@ var checkAccess = require('./check-access');
 
 
 module.exports = function (expr) {
-  var m = expr.match(/^([^:]+):([^=]*[^-+=])([-+]?)=(.*)$/);
+  var m = expr.match(/^([^:]+):([^=]*[^-+*=])([-+*]?)=(.*)$/);
 
   if (!m) {
     throw Error('Wrong clause format: ' + expr);
@@ -15,6 +15,18 @@ module.exports = function (expr) {
   var modifier = m[3];
   var value = m[4];
 
+  var transform = {
+    '+': function (oldValue, delta) {
+      return Number(oldValue) + Number(delta);
+    },
+    '-': function (oldValue, delta) {
+      return oldValue - delta;
+    },
+    '*': function (oldValue, delta) {
+      return oldValue * delta;
+    }
+  };
+
   if (!modifier) {
     return function (styles) {
       checkAccess(styles, style, attribute);
@@ -22,12 +34,10 @@ module.exports = function (expr) {
     };
   }
   else {
-    value = Number(value);
     return function (styles) {
       checkAccess(styles, style, attribute);
-      var oldValue = +styles[style][attribute];
-      var newValue = (modifier == '+') ? oldValue + value : oldValue - value;
-      styles[style][attribute] = newValue;
+      var oldValue = styles[style][attribute];
+      styles[style][attribute] = transform[modifier](oldValue, value);
     };
   }
 };
