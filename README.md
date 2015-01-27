@@ -2,10 +2,12 @@
 
 # ass-restyler
 
-[![Dependency Status][david-badge]][david]
+[![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
 Change SSA/ASS subtitle styles from the command line.
 
+[travis]: https://travis-ci.org/eush77/ass-restyler
+[travis-badge]: https://travis-ci.org/eush77/ass-restyler.svg
 [david]: https://david-dm.org/eush77/ass-restyler
 [david-badge]: https://david-dm.org/eush77/ass-restyler.png
 
