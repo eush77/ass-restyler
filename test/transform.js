@@ -1,7 +1,8 @@
 'use strict';
 
 var test = require('tape')
-  , concat = require('concat-stream');
+  , concat = require('concat-stream')
+  , gather = require('gather');
 
 var spawn = require('child_process').spawn
   , fs = require('fs');
@@ -20,33 +21,22 @@ var clauses = [
 
 
 test('ass-restyler', function (t) {
-  var after, output;
-  var left = 2;
+  var done = gather(function (output, after) {
+    t.equal(output, after);
+    t.end();
+  });
 
   var nodei = spawn('../cli.js', clauses, {
     cwd: __dirname
   });
 
   fs.createReadStream(__dirname + '/before.ass').pipe(nodei.stdin);
-  nodei.stdout.pipe(concat({ encoding: 'string' }, function (stdout) {
-    output = stdout;
-    next();
+  nodei.stdout.pipe(concat({ encoding: 'string' }, function (output) {
+    done(output, undefined);
   }));
 
-  fs.readFile(__dirname + '/after.ass', { encoding: 'utf8' }, function (err, data) {
+  fs.readFile(__dirname + '/after.ass', { encoding: 'utf8' }, function (err, after) {
     t.error(err, 'reading after.ass');
-    after = data;
-    next();
+    done(undefined, after);
   });
-
-  function next() {
-    if (!--left) {
-      done();
-    }
-  }
-
-  function done() {
-    t.equal(output, after);
-    t.end();
-  }
 });
