@@ -12,6 +12,7 @@
     "test": "tape test/*.js"
   },
   "files": [
+    "usage.txt",
     "cli.js",
     "src"
   ],
