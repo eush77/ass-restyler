@@ -4,7 +4,7 @@
 
 [![Build Status][travis-badge]][travis] [![Dependency Status][david-badge]][david]
 
-Change SSA/ASS subtitle styles from the command line.
+Transform SSA/ASS subtitle styles on the command line.
 
 [travis]: https://travis-ci.org/eush77/ass-restyler
 [travis-badge]: https://travis-ci.org/eush77/ass-restyler.svg
@@ -13,16 +13,19 @@ Change SSA/ASS subtitle styles from the command line.
 
 ## Example
 
+Bring `Default` style to middle of the screen:
+
 ```
-ass-restyler Default:MarginV=335 Default:Fontsize+=10 <input.ass >output.ass
+$ ass-restyler Default:MarginV=335 Default:Fontsize+=10 input.ass >output.ass
 ```
 
 ## CLI
 
 ```
-ass-restyler [clause]... <input.ass >output.ass
-ass-restyler --help
+ass-restyler [clause]... [file]
 ```
+
+Reads SSA/ASS subtitle from `file` or stdin and outputs transformed SSA/ASS on the standard output.
 
 Clauses:
   - `Style:Attribute=Value`

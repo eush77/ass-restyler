@@ -1,7 +1,7 @@
 {
   "name": "ass-restyler",
   "version": "0.2.3",
-  "description": "Command line utility for changing SSA/ASS subtitle styles",
+  "description": "Transform SSA/ASS subtitle styles on the command line",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
   "preferGlobal": true,
@@ -32,7 +32,10 @@
     "styles",
     "subtitles",
     "editor",
-    "cli"
+    "cli",
+    "transform",
+    "pipeline",
+    "restyler"
   ],
   "dependencies": {
     "ass-parser": "^0.1.1",

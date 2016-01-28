@@ -1,10 +1,14 @@
-Usage:  ass-restyler [clause]... <input.ass >output.ass
+Usage:  ass-restyler [clause]... [file]
         ass-restyler --help
+
+Reads SSA/ASS subtitle from file or stdin and outputs transformed
+SSA/ASS on the standard output.
 
 Clauses:
     Style:Property=Value
     Style:Property+=Value  (if it makes sense for the property)
     Style:Property-=Value  (if it makes sense for the property)
+    Style:Property*=Value  (if it makes sense for the property)
 
 Example:
-    ass-restyler Default:MarginV=335 Default:Fontsize+=10 <input.ass >output.ass
+    ass-restyler Default:MarginV=335 Default:Fontsize+=10 input.ass >output.ass
