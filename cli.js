@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-var Clause = require('./src/clause');
+var Clause = require('./lib/clause');
 
-var concat = require('concat-stream')
-  , parse = require('ass-parser')
-  , Styles = require('ass-styles')
-  , stringify = require('ass-stringify');
+var concat = require('concat-stream'),
+    parse = require('ass-parser'),
+    Styles = require('ass-styles'),
+    stringify = require('ass-stringify');
 
 var fs = require('fs');
 

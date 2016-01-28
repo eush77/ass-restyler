@@ -1,11 +1,11 @@
 'use strict';
 
-var test = require('tape')
-  , concat = require('concat-stream')
-  , gather = require('gather');
+var test = require('tape'),
+    concat = require('concat-stream'),
+    gather = require('gather');
 
-var spawn = require('child_process').spawn
-  , fs = require('fs');
+var spawn = require('child_process').spawn,
+    fs = require('fs');
 
 
 var clauses = [

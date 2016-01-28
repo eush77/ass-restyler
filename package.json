@@ -14,7 +14,7 @@
   "files": [
     "usage.txt",
     "cli.js",
-    "src"
+    "lib"
   ],
   "homepage": "https://github.com/eush77/ass-restyler",
   "repository": {
