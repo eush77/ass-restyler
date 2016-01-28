@@ -38,7 +38,9 @@
     "ass-parser": "^0.1.1",
     "ass-stringify": "^0.1.2",
     "ass-styles": "^0.2.0",
-    "concat-stream": "^1.4.7"
+    "concat-stream": "^1.4.7",
+    "help-version": "^1.1.0",
+    "or-die": "0.0.1"
   },
   "devDependencies": {
     "gather": "^0.1.0",

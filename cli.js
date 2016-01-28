@@ -6,20 +6,16 @@ var Clause = require('./lib/clause');
 var concat = require('concat-stream'),
     parse = require('ass-parser'),
     Styles = require('ass-styles'),
-    stringify = require('ass-stringify');
+    stringify = require('ass-stringify'),
+    die = require('or-die'),
+    App = require('help-version');
 
 var fs = require('fs');
 
 
-var argv = process.argv.slice(2);
+var app = App(fs.readFileSync(__dirname + '/usage.txt', 'utf8'));
 
-
-var usage = function () {
-  fs.createReadStream(__dirname + '/usage.txt').pipe(process.stdout);
-};
-
-
-var main = function () {
+(function main (argv) {
   process.stdin.pipe(concat({ encoding: 'string' }, function (sub) {
     try {
       var ass = parse(sub, { comments: true });
@@ -32,11 +28,7 @@ var main = function () {
       process.stdout.write(stringify(ass));
     }
     catch (err) {
-      console.error(err.toString());
-      process.exit(1);
+      die(err.toString());
     }
   }));
-};
-
-
-(argv.length == 1 && argv == '--help') ? usage() : main();
+}(process.argv.slice(2)));
