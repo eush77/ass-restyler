@@ -20,7 +20,7 @@ var clauses = [
 ];
 
 
-test('ass-restyler', function (t) {
+test('reading stdin', function (t) {
   var done = gather(function (output, after) {
     t.equal(output, after);
     t.end();
@@ -31,6 +31,27 @@ test('ass-restyler', function (t) {
   });
 
   fs.createReadStream(__dirname + '/before.ass').pipe(nodei.stdin);
+  nodei.stdout.pipe(concat({ encoding: 'string' }, function (output) {
+    done(output, undefined);
+  }));
+
+  fs.readFile(__dirname + '/after.ass', { encoding: 'utf8' }, function (err, after) {
+    t.error(err, 'reading after.ass');
+    done(undefined, after);
+  });
+});
+
+
+test('reading from file', function (t) {
+  var done = gather(function (output, after) {
+    t.equal(output, after);
+    t.end();
+  });
+
+  var nodei = spawn('../cli.js', clauses.concat(__dirname + '/before.ass'), {
+    cwd: __dirname
+  });
+
   nodei.stdout.pipe(concat({ encoding: 'string' }, function (output) {
     done(output, undefined);
   }));
