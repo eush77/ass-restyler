@@ -1,8 +1,10 @@
 Usage:  ass-restyler [clause]... [file]
+        ass-restyler -i [clause]... [file]...
         ass-restyler --help
 
-Reads SSA/ASS subtitle from file or stdin and outputs transformed
-SSA/ASS on the standard output.
+Reads SSA/ASS subtitles from files or stdin and outputs transformed
+SSA/ASS. With `-i', writes transformed subtitles back to the original
+files, otherwise writes to stdout.
 
 Clauses:
     Style:Property=Value

@@ -23,9 +23,12 @@ $ ass-restyler Default:MarginV=335 Default:Fontsize+=10 input.ass >output.ass
 
 ```
 ass-restyler [clause]... [file]
+ass-restyler -i [clause]... [file]...
 ```
 
-Reads SSA/ASS subtitle from `file` or stdin and outputs transformed SSA/ASS on the standard output.
+Reads SSA/ASS subtitles from files or stdin and outputs transformed
+SSA/ASS. With `-i`, writes transformed subtitles back to the original
+files, otherwise writes to stdout.
 
 Clauses:
   - `Style:Attribute=Value`
