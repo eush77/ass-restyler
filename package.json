@@ -1,6 +1,6 @@
 {
   "name": "ass-restyler",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Transform SSA/ASS subtitle styles on the command line",
   "author": "Eugene Sharygin <eush77@gmail.com>",
   "license": "MIT",
